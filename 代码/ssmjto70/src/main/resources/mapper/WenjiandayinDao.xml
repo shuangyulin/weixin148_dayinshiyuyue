@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.WenjiandayinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.WenjiandayinEntity" id="wenjiandayinMap">
+        <result property="wenjianming" column="wenjianming"/>
+        <result property="wenjian" column="wenjian"/>
+        <result property="shuangmiandayin" column="shuangmiandayin"/>
+        <result property="dayinyaoqiu" column="dayinyaoqiu"/>
+        <result property="tijiaoshijian" column="tijiaoshijian"/>
+        <result property="qujianshijian" column="qujianshijian"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.WenjiandayinVO" >
+		SELECT * FROM wenjiandayin  wenjiandayin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.WenjiandayinVO" >
+		SELECT  wenjiandayin.* FROM wenjiandayin  wenjiandayin
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.WenjiandayinView" >
+
+		SELECT  wenjiandayin.* FROM wenjiandayin  wenjiandayin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.WenjiandayinView" >
+		SELECT * FROM wenjiandayin  wenjiandayin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
